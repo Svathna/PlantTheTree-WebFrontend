@@ -16,7 +16,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
-import { NgxDataTableComponent } from './ngx-data-table/ngx-data-table.component';
 
 export const MaterialRoutes: Routes = [
   {
@@ -30,10 +29,6 @@ export const MaterialRoutes: Routes = [
   {
     path: 'lists',
     component: ListsComponent
-  },
-  {
-    path: 'table',
-    component: NgxDataTableComponent
   },
   {
     path: 'menu',

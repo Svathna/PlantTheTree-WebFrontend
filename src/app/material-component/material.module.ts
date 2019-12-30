@@ -31,7 +31,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
-import { NgxDataTableComponent } from './ngx-data-table/ngx-data-table.component';
 
 @NgModule({
   imports: [
@@ -42,7 +41,7 @@ import { NgxDataTableComponent } from './ngx-data-table/ngx-data-table.component
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    CdkTableModule,
+    CdkTableModule
   ],
   providers: [],
   entryComponents: [DialogOverviewExampleDialogComponent],
@@ -63,8 +62,7 @@ import { NgxDataTableComponent } from './ngx-data-table/ngx-data-table.component
     TooltipComponent,
     SnackbarComponent,
     SliderComponent,
-    SlideToggleComponent,
-    NgxDataTableComponent
+    SlideToggleComponent
   ]
 })
 export class MaterialComponentsModule {}
