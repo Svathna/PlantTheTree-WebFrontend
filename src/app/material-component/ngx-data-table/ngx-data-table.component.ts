@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'app-ngx-data-table',

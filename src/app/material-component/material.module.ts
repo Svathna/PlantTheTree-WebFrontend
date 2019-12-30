@@ -32,7 +32,6 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { NgxDataTableComponent } from './ngx-data-table/ngx-data-table.component';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
@@ -44,7 +43,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     ReactiveFormsModule,
     FlexLayoutModule,
     CdkTableModule,
-    NgxDatatableModule
   ],
   providers: [],
   entryComponents: [DialogOverviewExampleDialogComponent],
