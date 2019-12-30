@@ -32,6 +32,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { TableComponent } from './table/table.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import { TableComponent } from './table/table.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    CdkTableModule
+    CdkTableModule,
+    Ng2SmartTableModule,
   ],
   providers: [],
   entryComponents: [DialogOverviewExampleDialogComponent],
