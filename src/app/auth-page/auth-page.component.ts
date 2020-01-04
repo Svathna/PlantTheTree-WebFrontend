@@ -28,9 +28,9 @@ export class AuthPageComponent {
     private fb: FormBuilder,
     private router: Router,
   ) {
-    if (this.authService.isLoggedIn) {
-      this.router.navigate(['/dashboard']);
-   }
+  //   if (this.authService.isLoggedIn) {
+  //     this.router.navigate(['/dashboard']);
+  //  }
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
