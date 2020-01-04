@@ -4,14 +4,17 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 50px 100px;
 }
 
 .authentication-box {
-  width: 460px;
-  height: 300px;
-  color: white;
-  background-color: gray;
+  width: 500px;
+  height: auto;
+  opacity: 0.9;
   z-index: 2;
   margin: 0 auto;
+  padding: 50px;
+}
+
+button:hover {
+  color: black;
 }
