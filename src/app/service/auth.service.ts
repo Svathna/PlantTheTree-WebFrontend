@@ -79,7 +79,7 @@ export class AuthService {
   }
 
   get isLoggedIn(): boolean {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = localStorage.getItem('token');
     return (token != null) ? true : false;
   }
 }
