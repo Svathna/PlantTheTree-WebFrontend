@@ -18,3 +18,7 @@
 button:hover {
   color: black;
 }
+
+input::placeholder {
+  font-size: 12px;
+}
