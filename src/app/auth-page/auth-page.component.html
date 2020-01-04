@@ -11,7 +11,7 @@
         </div>
         <form [formGroup]="loginForm" *ngIf="!newUser">
           <div class="form-group">
-            <label class="col-form-label pt-0">Email</label>
+            <label class="col-form-label pt-0"><strong>Email</strong></label>
             <input
               class="form-control rounded border"
               formControlName="email"
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-form-label">Password</label>
+            <label class="col-form-label"><strong>Password</strong></label>
             <show-hide-password btnStyle="primary" [btnOutline]="false">
               <input
               class="form-control rounded border"
