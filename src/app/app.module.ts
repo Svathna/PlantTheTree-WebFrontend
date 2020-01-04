@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 
+import { AdminGuard } from "./admin.guard";
+import { TokenInterceptor } from "./interceptors/token.interceptor";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullComponent } from './layouts/full/full.component';
 import { AppHeaderComponent } from './layouts/full/header/header.component';
@@ -20,6 +21,8 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
+import { AuthService } from './service/auth.service';
+import { SecureInnerPagesGuardGuard } from './secure-inner-pages-guard.guard';
 
 @NgModule({
   declarations: [
@@ -44,9 +47,13 @@ import { AuthPageComponent } from './auth-page/auth-page.component';
     RouterModule.forRoot(AppRoutes)
   ],
   providers: [
+    AdminGuard,
+    SecureInnerPagesGuardGuard,
+    AuthService,
     {
-      provide: LocationStrategy,
-      useClass: PathLocationStrategy
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

@@ -22,3 +22,7 @@ button:hover {
 input::placeholder {
   font-size: 12px;
 }
+
+.card {
+  background-color: gray !important;
+}

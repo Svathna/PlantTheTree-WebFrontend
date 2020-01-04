@@ -28,7 +28,6 @@ export class AuthService {
 
   // Sign in function
   SignIn(email, password) {
-    console.log('hey');
     return new Promise((resolve, reject) => {
       try {
         this.http.post(environment.apiURL + '/user/login', {
@@ -73,7 +72,6 @@ export class AuthService {
 
   // Sign out
   SignOut() {
-    console.log('haha');
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     this.router.navigate([`/login`]).then(() => {
@@ -81,7 +79,7 @@ export class AuthService {
   }
 
   get isLoggedIn(): boolean {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = localStorage.getItem('token');
     return (token != null) ? true : false;
   }
 }
