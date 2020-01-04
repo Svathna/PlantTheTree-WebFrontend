@@ -15,6 +15,7 @@ import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './demo-material-module';
 import { ToastrModule } from 'ngx-toastr';
+import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
@@ -32,6 +33,7 @@ import { AuthPageComponent } from './auth-page/auth-page.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ShowHidePasswordModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
