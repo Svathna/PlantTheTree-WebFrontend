@@ -40,7 +40,7 @@ export class AuthService {
           if (user && response.success) {
             if (user.type === UserType.ADMIN || user.type === UserType.NORMAL_USER) {
               // OH YEAH! logged in successfuly
-              this.toster.success('Login succesful')
+              this.toster.success('Login succesful');
               this.userData = new User(user);
               localStorage.setItem('user', JSON.stringify(this.userData));
               localStorage.setItem('token', token);
