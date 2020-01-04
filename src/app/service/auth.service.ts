@@ -28,6 +28,7 @@ export class AuthService {
 
   // Sign in function
   SignIn(email, password) {
+    console.log('hey');
     return new Promise((resolve, reject) => {
       try {
         this.http.post(environment.apiURL + '/user/login', {
@@ -36,12 +37,14 @@ export class AuthService {
         })
         .subscribe(( response: LoginResponse) => {
           const { token, user } = response;
-          if (user) {
-            if (user.type === UserType.ADMIN) {
+          if (user && response.success) {
+            if (user.type === UserType.ADMIN || user.type === UserType.NORMAL_USER) {
               // OH YEAH! logged in successfuly
+              this.toster.success('Login succesful')
               this.userData = new User(user);
               localStorage.setItem('user', JSON.stringify(this.userData));
               localStorage.setItem('token', token);
+              this.router.navigate(['']);
               // got to the main page
               resolve(true);
             } else {
@@ -56,8 +59,9 @@ export class AuthService {
             this.toster.error('No user found');
             reject('No user found');
           }
-        }, () => {
-          this.toster.error('Error, logging in');
+        }, (res) => {
+          const errorMessage = res.error.message;
+          this.toster.error(errorMessage);
           reject('Error, logging in');
         });
       } catch (err) {
