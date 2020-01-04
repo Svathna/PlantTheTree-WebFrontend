@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
+import { AuthPageComponent } from './auth-page/auth-page.component';
 
 export const AppRoutes: Routes = [
   {
@@ -22,5 +23,9 @@ export const AppRoutes: Routes = [
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       }
     ]
-  }
+  },
+  {
+    path: 'login',
+    component: AuthPageComponent
+  },
 ];
